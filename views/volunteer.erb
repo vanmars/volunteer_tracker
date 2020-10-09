@@ -1,9 +1,9 @@
 <h1>Volunteer: <%= @volunteer.name %></h1>
-<h6>Project: <%= @project.name %></h6>
+<h6>Project: <%= @project.title %></h6>
 
 
 <h6>Update Volunteer:</h6>
-<form action="/projects/<%= @project.id %>/volunteers/ <%= @volunteer.id %>%" method="post">
+<form action="/projects/<%= @volunteer.project_id %>/volunteers/<%= @volunteer.id %>" method="post">
   <input name="_method" type="hidden" value="patch">
   <div class="form-group">
     <label for="name">Volunteer Name</label>
@@ -11,3 +11,6 @@
   </div>
   <button type="submit" class="btn btn-dark">Update Volunteer</button>
 </form>
+
+
+<a href="/projects/<%= @project.id %>">Return to Project</a>
