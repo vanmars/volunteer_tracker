@@ -55,8 +55,8 @@ To Extend This Project:
 USER=# CREATE DATABASE volunteer_tracker;
 USER=# \c volunteer_tracker;
 USER=# CREATE TABLE projects (id serial PRIMARY KEY, name varchar);
-record_store=# CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, project_id int);
-record_store=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunteer_tracker;
+volunteer_tracker=# CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, project_id int);
+volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunteer_tracker;
 ```
 - To Run Tests: While in the root directory of this project, run `rspec` in your command line.
 - To Run the App in Browser: While in the root directory of the project, run `ruby app.rb` in the terminal. This will start a server, which you can access by entering `localhost:4567` in your browser.
