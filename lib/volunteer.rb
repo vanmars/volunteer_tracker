@@ -16,4 +16,8 @@ class Volunteer
     end
   end
 
+  def self.all
+    
+  end
+
 end
