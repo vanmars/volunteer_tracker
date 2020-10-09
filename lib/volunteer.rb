@@ -4,6 +4,7 @@ class Volunteer
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
+    @project_id
   end
 
 end
