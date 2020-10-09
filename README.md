@@ -64,7 +64,7 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 
 ## Known Bugs
 
-_There are no known bugs at this time._
+* Line 45 in volunteer_integraion_spec.rb. Capaybara claims button is disabled, but button works on server and correctly deletes project from site.
 
 ## Support and Contact Details
 
