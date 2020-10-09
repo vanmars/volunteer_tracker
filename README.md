@@ -16,31 +16,12 @@ Create an application that tracks projects and the volunteers working on them. E
 * As a non-profit employee, I want to view and add volunteers.
 * As a non-profit employee, I want to add volunteers to a project.
 
-Objectives
-Your code will be reviewed for the following objectives:
-* Tests are 100% passing. You may not significantly alter the included tests but you may add additional tests as necessary.
-* Database is set up correctly.
-* Correct set up of a one-to-many relationship.
-* Sinatra has required CRUD functionality.
-* Project has strong commit history.
-* Project has detailed README with all necessary setup instructions and a description of the project.
-* Required functionality was in place by the Friday deadline.
-* Student can demonstrate understanding of Ruby concepts if asked.
-
-Further Exploration
-* Add full CRUD functionality for volunteers.
-* Add a search function so employees can find projects and volunteers by name.
-* Add a sort function so projects and volunteers can be sorted alphabetically.
-* Add an hours field to the volunteers table to track how many hours each volunteer has worked. Employees should be able to sort volunteers by most and least hours.
-* Add a method that calculates how many total hours all volunteers have put into a single project.
-* Make projects sortable by total hours as well.
-
 ## Specifications
 | Spec     | Behavior | Code Translation | 
 | -------- | -------- | -------- |
-| 1 | User(fake non-profit employee) can view, add, update, and delete projects. | Create a project class with methods for CRUD functionality. | 
-| 2 | User(fake non-profit employee) can view and add volunteers. | Create a volunteer class with methods for CRUD functionality.  |  
-| 3 | User(fake non-profit employee) can add volunteers to a project. | Volunteer class needs update method for adding project_id property. |  
+| 1 | User (fake non-profit employee) can view, add, update, and delete projects. | Create a project class with methods for CRUD functionality. | 
+| 2 | User (fake non-profit employee) can view and add volunteers. | Create a volunteer class with methods for CRUD functionality.  |  
+| 3 | User (fake non-profit employee) can add volunteers to a project. | Volunteer class needs update method for adding project_id property. |  
 
 ## Stretch Specifications
 | Spec     | Behavior | 
