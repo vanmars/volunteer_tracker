@@ -13,18 +13,17 @@
         <a class="nav-link" href="#">Link</a>
       </li> %>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+    <form action="/projects/search" method="post" class="form-inline my-2 my-lg-0">
+      <input id="search" name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+      <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Search</button>
     </form>
   </div>
 </nav>
-
 <header id="page-hero" class="site-header" style="background-image: url(https://i.pinimg.com/474x/7f/a2/74/7fa274049b2bcd73a0542c12f8cc6b8e.jpg); background-repeat: no-repeat; background-size: cover; background-position: bottom; height: 100vh;">
   <section class="layout-hero d-flex flex-column min-vh-100" style="color:#45B69C">
     <div class="header-content d-flex flex-column flex-fill">
       <div class="d-flex flex-column container justify-content-center align-items-center flex-fill text-center">
-        <h3 class="header-title display-2 font-weight-lighter">Evergreen State of Mind</h3>
+        <h3 class="header-title display-2 font-weight-lighter" style="color:#7293A0">Evergreen State of Mind</h3>
         <p class="header-subtitle lead font-weight-lighter">
           Evergreen State of Mind is an environmental non-profit, working to keep Washington state ever green. We are a mighty crew of characters who are exuberant about a green future.
         </p>
@@ -32,27 +31,31 @@
     </div>
   </section>
 </header>
-
-
-
-
-
-
+<br>
 <div class="container">
-
-  <h4>Welcome, Non-profit Employee!</h4>
-
-  <h4>Current Projects</h4>
-
+  <h4 class="display-4 font-weight-lighter" style="color:#D8DDEF">Current Projects</h4>
+  <br>
   <% if @projects.any? %>
-    <ul>
+    <table class="table table-striped" style="color: #D8DDEF; background-color: #7293A0">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Hours Completed</th>
+        </tr>
+      </thead>
+      <tbody>
       <% @projects.each do |project| %>
-        <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+        <tr>
+          <td><a href="/projects/<%= project.id %>" style="color: #D8DDEF"><%= project.title %></a></td>
+          <td>0</td>
+        </tr>
       <% end %>
-    </ul>
+      </tbody>
+    </table>
   <% else %>
     <p>There are currently no projects to display.</p>
   <% end %>
+
 
   <form action="/projects" method="post"> 
     <div class="form-group">
@@ -62,15 +65,17 @@
     <button type="submit" class="btn btn-dark">Create Project!</button>
   </form>
 
-  <form action="/projects/search" method="post">
+  
+</div>
+
+<%# Older Search %>
+<%# <form action="/projects/search" method="post">
     <div class="form-group">
       <label for="search">Search</label>
       <input id="search" name="search" class="form-control" type="text" required>
     </div>
     <button type="submit" class="btn">Go!</button>
-  </form>
-</div>
-
+  </form> %>
 
 
 

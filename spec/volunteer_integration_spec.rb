@@ -81,7 +81,7 @@ describe 'the search path', {:type => :feature} do
     test_volunteer2.save
     visit "/projects"
     fill_in('search', :with => 'kid')
-    click_button('Go!')
+    click_button('Search')
     expect(page).to have_no_link('Jasmine')
     expect(page).to have_link('Teaching Kids to Code')
     expect(page).to have_link('Teaching Kids to Cook')
