@@ -1,0 +1,27 @@
+<h1>Search Results</h1>
+
+<h3>Search Results</h3>
+<h5>Projects</h5>
+<% if @project_results.any? %>
+  <ul>
+    <% @project_results.each do |project| %>
+      <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no projects matching your search.</p>
+<% end %>
+
+
+<h5>Volunteers</h5>
+<% if @volunteer_results.any? %>
+  <ul>
+    <% @volunteer_results.each do |volunteer| %>
+      <li><a href="/projects/<%= volunteer.project_id %>/volunteers/<%= volunteer.id %>%"><%= volunteer.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no volunteers matching your search.</p>
+<% end %>
+
+<a href="/projects">Return to Projects</a>
