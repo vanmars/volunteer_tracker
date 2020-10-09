@@ -57,4 +57,8 @@ class Project
     DB.exec("DELETE FROM projects where id = #{@id};")
   end
 
+  def volunteers
+    
+  end
+
 end
