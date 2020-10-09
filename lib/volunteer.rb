@@ -29,5 +29,9 @@ class Volunteer
     end
     volunteers
   end
-  
+
+  def save
+    
+  end
+
 end
