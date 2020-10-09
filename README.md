@@ -43,6 +43,8 @@ Further Exploration
 | 3 | User(fake non-profit employee) can add volunteers to a project. | Volunteer class needs update method for adding project_id property. |  
 
 ## Stretch Specifications
+| Spec     | Behavior | 
+| -------- | -------- |
 | 4 | Add full CRUD functionality for volunteers. |  
 | 5 | Add a search function, so employees can find projects and volunteers by name. | 
 | 6 | Add a sort function so projects and volunteers can be sorted alphabetically. |
@@ -69,11 +71,11 @@ To Extend This Project:
 - In another terminal, run `psql`, which is how you will interact with your Postgres databases.
 - Create databases and tables with the following commands:
 ```
-USER=# CREATE DATABASE record_store;
-USER=# \c record_store;
-USER=# CREATE TABLE albums (id serial PRIMARY KEY, name varchar);
-record_store=# CREATE TABLE songs (id serial PRIMARY KEY, name varchar, album_id int);
-record_store=# CREATE DATABASE record_store_test WITH TEMPLATE record_store;
+USER=# CREATE DATABASE volunteer_tracker;
+USER=# \c volunteer_tracker;
+USER=# CREATE TABLE projects (id serial PRIMARY KEY, name varchar);
+record_store=# CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, project_id int);
+record_store=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunteer_tracker;
 ```
 - To Run Tests: While in the root directory of this project, run `rspec` in your command line.
 - To Run the App in Browser: While in the root directory of the project, run `ruby app.rb` in the terminal. This will start a server, which you can access by entering `localhost:4567` in your browser.
