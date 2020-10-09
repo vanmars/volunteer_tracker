@@ -55,4 +55,8 @@ class Volunteer
       DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
     end
   end
+
+  def self.search(search)
+    
+  end
 end
