@@ -22,4 +22,8 @@ class Project
     projects
   end
 
+  def save
+    
+  end
+
 end
