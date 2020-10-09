@@ -45,4 +45,8 @@ class Project
     end
   end
 
+  def delete
+    
+  end
+
 end
