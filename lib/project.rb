@@ -38,4 +38,8 @@ class Project
     end
   end
 
+  def update(attributes)
+    
+  end
+
 end
