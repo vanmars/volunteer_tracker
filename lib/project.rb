@@ -18,10 +18,12 @@ class Project
   def self.all
     projects = []
     returned_projects = DB.exec("SELECT * FROM projects;")
-    returned_projects.each do |project|
-      title = project.fetch('name')
-      id = project.fetch('id').to_i
-      projects << Project.new({title: title, id: id})
+    if returned_projects != nil
+      returned_projects.each do |project|
+        title = project.fetch('name')
+        id = project.fetch('id').to_i
+        projects << Project.new({title: title, id: id})
+      end
     end
     projects
   end
