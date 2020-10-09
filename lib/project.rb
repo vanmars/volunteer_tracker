@@ -8,7 +8,11 @@ class Project
   end
 
   def ==(project_to_compare)
-    self.title == project_to_compare.title
+    if project_to_compare != nil
+      self.title == project_to_compare.title
+    else
+      false
+    end
   end
 
   def self.all
