@@ -11,4 +11,8 @@ class Project
     self.title == project_to_compare.title
   end
 
+  def self.all
+    
+  end
+
 end
