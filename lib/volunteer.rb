@@ -57,6 +57,16 @@ class Volunteer
   end
 
   def self.search(search)
-    
+    results = []
+    returned_volunteers = DB.exec("SELECT * FROM volunteers WHERE name ILIKE '%#{search}%';")
+    if returned_volunteers
+      returned_volunteers.each do |volunteer|
+      name = volunteer.fetch('name')
+      project_id = volunteer.fetch('project_id').to_i
+      id = volunteer.fetch('id').to_i
+      results << Volunteer.new({name: name, project_id: project_id, id: id})
+      end
+    end
+    results
   end
 end
