@@ -20,7 +20,7 @@ describe Project do
       project.save
       expect(project.id).to be_an_instance_of Integer
     end
-    end
+  end
 
   describe '#==' do
     it 'is the same project if two projects have the same title' do
