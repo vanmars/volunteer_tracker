@@ -82,7 +82,16 @@ class Project
   end
 
   def self.search(search)
-
+    results = []
+    returned_projects = DB.exec("SELECT * FROM projects WHERE name ILIKE '%#{search}%';")
+    if returned_projects
+      returned_projects.each do |project|
+      title = project.fetch('name')
+      id = project.fetch('id').to_i
+      results << Project.new({title: title, id: id})
+      end
+    end
+    results
   end
 
 end
