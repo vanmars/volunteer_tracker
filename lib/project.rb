@@ -58,7 +58,15 @@ class Project
   end
 
   def volunteers
-    
+    volunteers = []
+    results = DB.exec("SELECT * from volunteers WHERE project_id = #{@id};")
+    if results != nil
+      results.each do |result|
+        name = result.fetch('name')
+        id = result.fetch('id').to_i
+        volunteers << Volunteer.new({name: name, project_id: @id, id: id})
+      end
+    end
+    volunteers
   end
-
 end
