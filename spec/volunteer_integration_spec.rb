@@ -48,7 +48,7 @@ describe 'the project delete path', {:type => :feature} do
   end
 end
 
-# # The user should be able to click on a project detail page and see a list of all volunteers working on that project. The user should be able to click on a volunteer to see the volunteer's detail page.
+# The user should be able to click on a project detail page and see a list of all volunteers working on that project. The user should be able to click on a volunteer to see the volunteer's detail page.
 
 describe 'the volunteer detail page path', {:type => :feature} do
   it 'shows a volunteer detail page' do
@@ -62,5 +62,29 @@ describe 'the volunteer detail page path', {:type => :feature} do
     fill_in('name', :with => 'Jane')
     click_button('Update Volunteer')
     expect(page).to have_content('Jane')
+  end
+end
+
+# The user should be able to search volunteers and projects by search term.
+
+describe 'the search path', {:type => :feature} do
+  it 'shows a search results page with links to matched projects and volunteers' do
+    test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    test_project.save
+    project_id = test_project.id.to_i
+    test_volunteer = Volunteer.new({:name => 'Jasmine', :project_id => project_id, :id => nil})
+    test_volunteer.save
+    test_project2 = Project.new({:title => 'Teaching Kids to Cook', :id => nil})
+    test_project2.save
+    project_id2 = test_project.id.to_i
+    test_volunteer2 = Volunteer.new({:name => 'Kid', :project_id => project_id2, :id => nil})
+    test_volunteer2.save
+    visit "/projects"
+    fill_in('search', :with => 'kid')
+    click_button('Go!')
+    expect(page).to have_no_link('Jasmine')
+    expect(page).to have_link('Teaching Kids to Code')
+    expect(page).to have_link('Teaching Kids to Cook')
+    expect(page).to have_link('Kid')
   end
 end
