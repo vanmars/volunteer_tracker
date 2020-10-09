@@ -7,3 +7,6 @@ also_reload('lib/**/*.rb')
 require("pg")
 
 DB = PG.connect({:dbname => "volunteer_tracker"})
+
+get('/') do
+end
