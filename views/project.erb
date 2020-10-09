@@ -10,7 +10,7 @@
 <br>
 
 <h4>Project Volunteers</h4>
-<% if @project.volunteers %>
+<% if !@project.volunteers.empty? %>
   <ul>
     <% @project.volunteers.each do |volunteer| %>
       <li><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></li>
