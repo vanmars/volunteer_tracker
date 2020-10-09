@@ -65,3 +65,10 @@ patch('/projects/:id/volunteers/:volunteer_id') do
   @volunteer.update({name: params[:name]})
   erb(:volunteer)
 end
+
+post('/projects/search') do
+  search_term = params[:search]
+  @project_results = Project.search(search_term)
+  @volunteer_results = Volunteer.search(search_term)
+  erb(:search)
+end

@@ -91,4 +91,14 @@ describe Project do
       expect(Project.all).to eq []
     end
   end
+
+  describe '.search' do
+    it 'allows a user to search for a project by keyword' do
+      project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      project1.save
+      project2 = Project.new({:title => 'Teach Adults to Code', :id => nil})
+      project2.save
+      expect(Project.search("teach")).to eq [project1, project2]
+    end
+  end
 end

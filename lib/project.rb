@@ -69,4 +69,20 @@ class Project
     end
     volunteers
   end
+
+
+  def self.search(name)
+    results = []
+    self.all.each do |album|
+      if album.name.match?(/#{name}/i)
+        results.push(album)
+      end
+    end
+    results
+  end
+
+  def self.search(search)
+
+  end
+
 end
