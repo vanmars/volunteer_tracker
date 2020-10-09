@@ -15,15 +15,16 @@ class Project
     projects = []
     returned_projects = DB.exec("SELECT * FROM projects;")
     returned_projects.each do |project|
-      title = project.fetch('title')
+      title = project.fetch('name')
       id = project.fetch('id').to_i
-      projects << Project.new({title: title, id: it})
+      projects << Project.new({title: title, id: id})
     end
     projects
   end
 
   def save
-    
+    result = DB.exec("INSERT INTO projects (name) VALUES ('#{@title}') RETURNING id;")
+    @id = result.first.fetch('id').to_i
   end
 
 end
