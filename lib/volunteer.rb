@@ -2,8 +2,7 @@ class Volunteer
   attr_reader
   attr_accessor
 
-  def initialize
-    
+  def initialize(attributes)
   end
 
 end
