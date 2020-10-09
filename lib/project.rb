@@ -17,7 +17,7 @@ class Project
 
   def self.all
     projects = []
-    returned_projects = DB.exec("SELECT * FROM projects;")
+    returned_projects = DB.exec("SELECT * FROM projects ORDER BY name ASC;")
     if returned_projects != nil
       returned_projects.each do |project|
         title = project.fetch('name')
@@ -59,7 +59,7 @@ class Project
 
   def volunteers
     volunteers = []
-    results = DB.exec("SELECT * from volunteers WHERE project_id = #{@id};")
+    results = DB.exec("SELECT * from volunteers WHERE project_id = #{@id} ORDER BY name ASC;")
     if results != nil
       results.each do |result|
         name = result.fetch('name')
