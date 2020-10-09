@@ -48,4 +48,7 @@ class Volunteer
       nil
     end
   end
+
+  def update(attributes)
+  end
 end

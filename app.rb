@@ -45,3 +45,22 @@ get('/projects/:id/edit') do
   @project = Project.find(params[:id].to_i)
   erb(:edit_project)
 end
+
+post('/projects/:id/volunteers') do
+  @project = Project.find(params[:id].to_i)
+  volunteer = Volunteer.new({name: params[:name], project_id: @project.id, id: nil})
+  volunteer.save
+  erb(:project)
+end
+
+get('/projects/:id/volunteers/:volunteer_id') do
+  @volunteer = Volunteer.find(params[:volunteer_id].to_i)
+  @project = Project.find(params[:id].to_i)
+  erb(:volunteer)
+end
+
+patch('/projects/:id/volunteers/:volunteer_id') do
+  @volunteer = Volunteer.find(params[:volunteer_id].to_i)
+  @volunteer.update({})
+  erb(:volunteers)
+end
