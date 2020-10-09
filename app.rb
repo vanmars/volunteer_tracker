@@ -35,7 +35,12 @@ patch('/projects/:id') do
   erb(:project)
 end
 
+delete('/projects/:id') do
+  redirect to('/projects')
+end
+
 get('/projects/:id/edit') do
   @project = Project.find(params[:id].to_i)
   erb(:edit_project)
 end
+
