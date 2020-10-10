@@ -11,7 +11,7 @@ class Volunteer
 
   def ==(volunteer_to_compare)
     if volunteer_to_compare != nil
-      (self.name == volunteer_to_compare.name) && (self.project_id == volunteer_to_compare.project_id)
+      (self.name == volunteer_to_compare.name) && (self.project_id == volunteer_to_compare.project_id) && (self.hours == volunteer_to_compare.hours)
     else
       false
     end
