@@ -1,11 +1,12 @@
 class Volunteer
   attr_reader :id
-  attr_accessor :name, :project_id
+  attr_accessor :name, :project_id, :hours
 
   def initialize(attributes)
     @name = attributes.fetch(:name)
     @project_id = attributes.fetch(:project_id)
     @id = attributes.fetch(:id)
+    @hours = 0
   end
 
   def ==(volunteer_to_compare)
@@ -50,9 +51,12 @@ class Volunteer
   end
 
   def update(attributes)
-    if attributes.has_key?(:name) && attributes.fetch(:name) != nil
+    if (attributes.has_key?(:name)) && (attributes.fetch(:name) != nil)
       @name = attributes.fetch(:name)
       DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id};")
+    elsif (attributes.has_key?(:hours)) && (attributes.fetch(:hours) != nil)
+      @hours = @hours + (attributes.fetch(:hours).to_i)
+      DB.exec("UPDATE volunteers SET hours = #{@hours} WHERE id = #{@id};")
     end
   end
 
