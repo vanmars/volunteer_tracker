@@ -69,4 +69,10 @@ class Volunteer
     end
     results
   end
+
+  def delete 
+    
+  end
+
+
 end

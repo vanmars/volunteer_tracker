@@ -87,4 +87,16 @@ describe Volunteer do
       expect(Volunteer.search('j')).to eq [volunteer1, volunteer2]
     end
   end
+
+  describe '#delete' do
+    it 'allows a user to delete a volunteer' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      volunteer1.save
+      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => 1, :id => nil})
+      volunteer2.save
+      volunteer1.delete
+      expect(Volunteer.all).to eq [volunteer2]
+    end
+  end
+
 end
