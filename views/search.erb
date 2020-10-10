@@ -1,27 +1,92 @@
-<h1>Search Results</h1>
-
-<h3>Search Results</h3>
-<h5>Projects</h5>
-<% if @project_results.any? %>
-  <ul>
-    <% @project_results.each do |project| %>
-      <li><a href="/projects/<%= project.id %>"><%= project.title %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no projects matching your search.</p>
-<% end %>
-
-
-<h5>Volunteers</h5>
-<% if @volunteer_results.any? %>
-  <ul>
-    <% @volunteer_results.each do |volunteer| %>
-      <li><a href="/projects/<%= volunteer.project_id %>/volunteers/<%= volunteer.id %>%"><%= volunteer.name %></a></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>There are no volunteers matching your search.</p>
-<% end %>
-
-<a href="/projects">Return to Projects</a>
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color:  #45B69C">
+  <a class="navbar-brand" href="#"><i class="fas fa-tree"></i> Evergreen State of Mind</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/projects">Projects <span class="sr-only"></span></a>
+      </li>
+    </ul>
+    <form action="/projects/search" method="post" class="form-inline my-2 my-lg-0">
+      <input id="search" name="search" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" required>
+      <button type="submit" class="btn btn-outline-light my-2 my-sm-0">Search</button>
+    </form>
+  </div>
+</nav>
+<div class="container">
+  <br>
+  <br>
+  <h4 class="display-4 font-weight-lighter text-center" style="color:#D8DDEF">Search Results</h4>
+  <br>
+  <section class="row">
+    <div class="col-md-6">
+      <% if @project_results.any? %>
+        <table class="table table-striped" style="color: #D8DDEF; background-color: #A0A4B8">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th scope="col">Projects</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @project_results.each do |project| %>
+            <tr>
+              <td><a href="/projects/<%= project.id %>" style="color: #D8DDEF"><%= project.title %></a></td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% else %>
+         <table class="table table-striped" style="color: #D8DDEF; background-color: #A0A4B8">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th scope="col">Projects</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><p>There are currently no projects to display.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+      <div class="col-md-6">
+      <% if @volunteer_results.any? %>
+        <table class="table table-striped" style="color: #D8DDEF; background-color: #A0A4B8">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th scope="col">Volunteers</th>
+            </tr>
+          </thead>
+          <tbody>
+          <% @volunteer_results.each do |volunteer| %>
+            <tr>
+              <td><a href="/projects/<%= volunteer.project_id %>/volunteers/<%= volunteer.id %>%"><%= volunteer.name %></a>/td>
+            </tr>
+          <% end %>
+          </tbody>
+        </table>
+      <% else %>
+        <table class="table table-striped" style="color: #D8DDEF; background-color: #A0A4B8">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th scope="col">Volunteers</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><p>There are currently no volunteers to display.</p></td>
+            </tr>
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </section>
+</div>
+<footer>
+  <div class="fixed-bottom p-2" style="background-color: #45B69C">
+    <p class="text-white">&#169; 2020 <em>Evergreen Stage of Mind</em></p>
+  </div>
+</footer>
