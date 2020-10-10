@@ -18,7 +18,16 @@ describe Volunteer do
   describe '#hours' do
     it 'returns the hours of the volunteer' do
       test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      test_volunteer.save
       expect(test_volunteer.hours).to eq 0
+    end
+
+    it 'returns the hours of the volunteer who has added multiple hours' do
+      test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      test_volunteer.save
+      test_volunteer.update({hours: 7})
+      test_volunteer.update({hours: 8})
+      expect(test_volunteer.hours).to eq 15
     end
   end
 
