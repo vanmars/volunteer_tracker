@@ -21,7 +21,7 @@ Create an application that tracks projects and the volunteers working on them. E
 | -------- | -------- | -------- |
 | 1 | User (fake non-profit employee) can view, add, update, and delete projects. | Create a project class with methods for CRUD functionality. | 
 | 2 | User (fake non-profit employee) can view and add volunteers. | Create a volunteer class with methods for CRUD functionality.  |  
-| 3 | User (fake non-profit employee) can add volunteers to a project. | Volunteer class needs update method for adding project_id property. |  
+| 3 | User (fake non-profit employee) can add volunteers to a project. | Volunteer class needs project_id property to connect with projects table primary key. |  
 
 ## Stretch Specifications
 | Spec     | Behavior | 
@@ -34,7 +34,7 @@ Create an application that tracks projects and the volunteers working on them. E
 | 10 | Make projects sortable by total hours as well. |   
 
 ## Visualization of Data Tables
-<img src="./public/img/tables.png">
+<img src="./public/img/new_tables.png">
 
 ## Setup/Installation Requirements
 
@@ -55,7 +55,7 @@ To Extend This Project:
 USER=# CREATE DATABASE volunteer_tracker;
 USER=# \c volunteer_tracker;
 USER=# CREATE TABLE projects (id serial PRIMARY KEY, name varchar);
-volunteer_tracker=# CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, project_id int);
+volunteer_tracker=# CREATE TABLE volunteers (id serial PRIMARY KEY, name varchar, project_id int, hours int);
 volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunteer_tracker;
 ```
 - To Run Tests: While in the root directory of this project, run `rspec` in your command line.
@@ -65,11 +65,14 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 ## Known Bugs
 
 * If a user enters an apostrophe into any input field, the code breaks. Need to consider edge case inputs and code for them.
-* Integration test 2 stopped passing, yet project names are being updated on the page.
+* Integration test 2 stopped passing; error message says content not appearing on page, yet project names are in fact being updated on the page when localhost server is run.
+* Individual volunteer hours are not being added to volunteer table on individual project pages. Also, if you update a volunteers hours, it changes the total hours, rather than adding to total.tabl
 
 Items to Improve:
+* Attempt last stretch goal: sort porjects table by hours.
 * When you add a project on the home page, it would be nice to have the post method go to the place on the page where the table exists, so that you don't have to scroll down after every project addition.
 * Could add more integration test for full coverage, and more bad input tests for spec tests.
+* Add in a project description column in projects database and include on project creation form to paste on project detail page.
 
 ## Support and Contact Details
 
@@ -77,7 +80,7 @@ _Connect with me at vamariestewart@gmail.com with ideas to improve this project.
 
 ## Technologies Used
 
-* HTML5/Embedded Ruby(.erb)
+* HTML5
 * CSS/Bootstrap
 * Ruby
 * Ruby Gems: Capybara, Pry, PG, RSpec, Sinatra, Sintara-Contrib
