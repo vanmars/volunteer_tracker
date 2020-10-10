@@ -18,7 +18,7 @@
 <div class="container">
   <br>
   <div class="card text-center">
-    <div class="card-header">
+    <div class="card-header" style="background-color: #D8DDEF">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
           <a class="nav-link" href="/projects/<%= @project.id %>">Project</a>
@@ -29,26 +29,36 @@
       </ul>
     </div>
     <div class="card-body">
-      <h3 class="card-title"><%= @project.title %></h3>
+      <h3 class="card-title"><%= @project.title %> (Edit)</h3>
       <p class="card-text">Project Description</p>
     </div>
   </div>
-  <h1>Update Project: <%= @project.title %></h1>
-
-  <form action="/projects/<%= @project.id %>" method="post">
-    <input name="_method" type="hidden" value="patch">
-    <div class="form-group">
-      <label for="title">Rename Project</label>
-      <input id="title" name="title" class="form-control" type="text" required>
-    </div>
-    <button type="submit" class="btn btn-dark">Update Project</button>
-  </form>
   <br>
-
-  <form action="/projects/<%= @project.id %>" method="post">
-    <input name="_method" type="hidden" value="delete">
-    <button type="submit" class="btn btn-danger" enabled>Delete Project</button>
-  </form>
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card text-center shadow" style="background-color: #7293A0">
+        <div class="card-header"><h5 class="card-title">Rename Project</h5></div>
+          <div class="card-body">
+            <form action="/projects/<%= @project.id %>" method="post">
+            <input name="_method" type="hidden" value="patch">
+            <form action="/projects/<%= @project.id %>/volunteers" method="post">
+              <div class="form-group">
+                <label for="title" style="color: #D8DDEF"> New Name</label>
+                <input id="title" name="title" class="form-control" type="text" required>
+              </div>
+              <button type="submit" class="btn btn-dark">Update Project</button>
+            </form>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br>
+  <div class="row justify-content-center">
+      <form action="/projects/<%= @project.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button type="submit" class="btn btn-danger" enabled>Delete Project</button>
+      </form>
+  </div>
 </div>
 <footer>
   <div class="fixed-bottom p-2" style="background-color: #45B69C">
