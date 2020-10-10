@@ -20,7 +20,6 @@ describe Volunteer do
       test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
       expect(test_volunteer.id).to eq nil
     end
-  
 
     it 'returns the id of the volunteer after saving volunteer' do
       test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})

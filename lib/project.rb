@@ -71,7 +71,6 @@ class Project
     volunteers
   end
 
-
   def self.search(name)
     results = []
     self.all.each do |album|
@@ -94,5 +93,4 @@ class Project
     end
     results
   end
-
 end
