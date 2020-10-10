@@ -6,7 +6,7 @@ class Volunteer
     @name = attributes.fetch(:name)
     @project_id = attributes.fetch(:project_id)
     @id = attributes.fetch(:id)
-    @hours = 1
+    @hours = 0
   end
 
   def ==(volunteer_to_compare)
