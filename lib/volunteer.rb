@@ -71,8 +71,6 @@ class Volunteer
   end
 
   def delete 
-    
+    DB.exec("DELETE FROM volunteers WHERE id = #{@id}")
   end
-
-
 end
