@@ -98,5 +98,4 @@ describe Volunteer do
       expect(Volunteer.all).to eq [volunteer2]
     end
   end
-
 end
