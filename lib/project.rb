@@ -71,16 +71,6 @@ class Project
     volunteers
   end
 
-  def self.search(name)
-    results = []
-    self.all.each do |album|
-      if album.name.match?(/#{name}/i)
-        results.push(album)
-      end
-    end
-    results
-  end
-
   def self.search(search)
     results = []
     returned_projects = DB.exec("SELECT * FROM projects WHERE name ILIKE '%#{search}%';")
@@ -92,5 +82,14 @@ class Project
       end
     end
     results
+  end
+
+  def get_hours
+    hours = 0
+    result = DB.exec("SELECT SUM(hours) total FROM volunteers WHERE project_id = #{@id};").first
+    if result
+      hours = result.fetch('total').to_i
+    end
+    hours
   end
 end
