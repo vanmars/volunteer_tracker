@@ -39,7 +39,7 @@ Create an application that tracks projects and the volunteers working on them. E
 ## Setup/Installation Requirements
 
 To View Project:
-* Open a web browser of your choice and navigate to the following page:
+* Check out the Heroku app [here](https://fierce-cove-34319.herokuapp.com/)!
 
 To Extend This Project:
 - Navigate to the directory on your local computer where you would like to clone this repo.
@@ -66,12 +66,12 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 
 * If a user enters an apostrophe into any input field, the code breaks. Need to consider edge case inputs and code for them.
 * Integration test 2 stopped passing; error message says content not appearing on page, yet project names are in fact being updated on the page when localhost server is run.
-* Individual volunteer hours are not being added to volunteer table on individual project pages. Also, if you update a volunteers hours, it changes the total hours, rather than adding to total.tabl
+* Individual volunteer hours are not being added to volunteer table on individual project pages. Also, an update to a volunteer's hours after an initial update changes the total hours, rather than adding to total.
 
 Items to Improve:
 * Attempt last stretch goal: sort porjects table by hours.
-* When you add a project on the home page, it would be nice to have the post method go to the place on the page where the table exists, so that you don't have to scroll down after every project addition.
-* Could add more integration test for full coverage, and more bad input tests for spec tests.
+* When a project is added on the home page, it would be nice to have the post method go to the place on the page where the table exists to avoid having to scroll down after every project addition.
+* Could add more integration test for fuller coverage and more bad input tests to check for edge cases.
 * Add in a project description column in projects database and include on project creation form to paste on project detail page.
 
 ## Support and Contact Details
