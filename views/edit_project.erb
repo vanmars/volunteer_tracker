@@ -49,8 +49,8 @@
             <input name="_method" type="hidden" value="patch">
             <form action="/projects/<%= @project.id %>/volunteers" method="post">
               <div class="form-group">
-                <label for="title" style="color: #D8DDEF"> New Name</label>
-                <input id="title" name="title" class="form-control" type="text" required>
+                <label for="title" style="color: #D8DDEF">New Name</label>
+                <input id="title" name="title" class="form-control mx-auto" style="width:50%" type="text" required>
               </div>
               <button type="submit" class="btn btn-dark">Update Project</button>
             </form>
