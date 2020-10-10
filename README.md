@@ -1,4 +1,4 @@
-# _Volunteer Tracker_
+# _Evergreen State of Mind: Project and Volunteer Tracker_
 
 _9 October 2020_
 
@@ -8,7 +8,7 @@ _9 October 2020_
 
 ## Description
 
-_This is a project for Epicodus to demonstrate mastery using basic SQL database methods with a Sinatra application. The application is for a fake non-profit in need of tracking projects and the volunteers working on each project. The original directions for the assignment include:_
+_This is a project for Epicodus to demonstrate mastery using basic SQL database methods with a Sinatra application. The application is for a fake non-profit called Evergreen State of Mind, which is in need of tracking projects and the volunteers working on each project. The original directions for the assignment include:_
 
 Create an application that tracks projects and the volunteers working on them. Each volunteer will belong to only one project (one project, many volunteers).The following user stories should be completed:
 
@@ -64,7 +64,11 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 
 ## Known Bugs
 
-* Line 45 in volunteer_integraion_spec.rb. Capaybara claims button is disabled, but button works on server and correctly deletes project from site.
+* If a user enters an apostrophe into any input field, the code breaks. Need to consider edge case inputs and code for them.
+
+Items to Improve:
+* When you add a project on the home page, it would be nice to have the post method go to the place on the page where the table exists, so that you don't have to scroll down after every project addition.
+* Could add more integration test for full coverage, and more bad input tests for spec tests.
 
 ## Support and Contact Details
 
