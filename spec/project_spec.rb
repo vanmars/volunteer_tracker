@@ -110,4 +110,20 @@ describe Project do
       expect(Project.search("teach")).to eq [project1, project2]
     end
   end
+
+  describe '#get_hours' do
+    it 'allows a user to get the total hours worked on a project' do
+      project1 = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      project1.save
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => project1.id, :id => nil})
+      volunteer1.save
+      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => project1.id, :id => nil})
+      volunteer2.save
+      volunteer1.update({hours: 7})
+      volunteer2.update({hours: 5})
+      expect(project1.get_hours).to eq 12
+    end
+  end
+
+
 end
