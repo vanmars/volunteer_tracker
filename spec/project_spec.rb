@@ -90,6 +90,15 @@ describe Project do
       project.delete
       expect(Project.all).to eq []
     end
+
+    it('deletes the volunteers associated with a project as well') do
+      project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+      project.save
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => project.id, :id => nil})
+      volunteer1.save
+      project.delete
+      expect(Volunteer.all).to eq []
+    end
   end
 
   describe '.search' do
