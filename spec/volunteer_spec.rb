@@ -15,6 +15,13 @@ describe Volunteer do
     end
   end
 
+  describe '#hours' do
+    it 'returns the hours of the volunteer' do
+      test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      expect(test_volunteer.hours).to eq 0
+    end
+  end
+
   context '#id' do
     it 'returns the id of the volunteer before saving volunteer' do
       test_volunteer = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
