@@ -62,8 +62,13 @@ end
 patch('/projects/:id/volunteers/:volunteer_id') do
   @project = Project.find(params[:id].to_i)
   @volunteer = Volunteer.find(params[:volunteer_id].to_i)
-  @volunteer.update({name: params[:name]})
-  erb(:volunteer)
+  if params[:name]
+    @volunteer.update({name: params[:name]})
+    erb(:volunteer)
+  elsif params[:hours]
+    @volunteer.update({hours: params[:hours]})
+    erb(:project)
+  end
 end
 
 post('/projects/search') do

@@ -23,15 +23,32 @@
       
     </div>
     <div class="card-body" style="background-color: #D8DDEF">
-      <h5 class="card-title">Update Volunteer Name</h5>
-      <form action="/projects/<%= @volunteer.project_id %>/volunteers/<%= @volunteer.id %>" method="post">
-        <input name="_method" type="hidden" value="patch">
-        <div class="form-group">
-          <label for="name">Volunteer Name</label>
-          <input id="name" name="name" class="form-control mx-auto" type="text" style="width:25%" required>
+      <h5 class="card-title">Update Volunteer Details</h5>
+      <div class="row">
+        <div class="col-md">
+          <form action="/projects/<%= @volunteer.project_id %>/volunteers/<%= @volunteer.id %>" method="post">
+            <input name="_method" type="hidden" value="patch">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input id="name" name="name" class="form-control mx-auto" type="text" style="width:25%" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Change Name</button>
+          </form>
         </div>
-        <button type="submit" class="btn btn-dark">Update Volunteer</button>
-      </form>
+
+        <div class="col-md">
+          <form action="/projects/<%= @volunteer.project_id %>/volunteers/<%= @volunteer.id %>" method="post">
+            <input name="_method" type="hidden" value="patch">
+            <div class="form-group">
+              <label for="hours">Hours</label>
+              <input id="hours" name="hours" class="form-control mx-auto" type="text" style="width:25%" required>
+            </div>
+            <button type="submit" class="btn btn-dark">Add Hours</button>
+          </form>
+        </div>
+      </div>
+
+
     </div>
     <div class="card-footer text-white" style="background-color: #7293A0">
       <a href="/projects/<%= @project.id %>" style="color: #D8DDEF">Return to Poject: <%= @project.title %></a>

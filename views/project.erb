@@ -48,7 +48,7 @@
           <% @project.volunteers.each do |volunteer| %>
             <tr>
               <td><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>" style="color: #D8DDEF"><%= volunteer.name %></a></td>
-              <td>0</td>
+              <td><%= volunteer.hours %></td>
             </tr>
           <% end %>
           </tbody>
