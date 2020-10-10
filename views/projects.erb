@@ -46,7 +46,7 @@
           <% @projects.each do |project| %>
             <tr>
               <td><a href="/projects/<%= project.id %>" style="color: #D8DDEF"><%= project.title %></a></td>
-              <td>0</td>
+              <td><%= project.get_hours %></td>
             </tr>
           <% end %>
           </tbody>

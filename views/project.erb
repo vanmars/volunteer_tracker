@@ -52,6 +52,13 @@
             </tr>
           <% end %>
           </tbody>
+          <tfoot class="thead-dark">
+            <tr>
+              <td>Total Project Hours</td>
+              <td><%= @project.get_hours %></td>
+            </tr>
+          </tfoot>
+
         </table>
       <% else %>
         <p>There are no volunteers listed for this project yet.</p>
