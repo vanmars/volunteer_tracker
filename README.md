@@ -60,7 +60,7 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 ```
 - To Run Tests: While in the root directory of this project, run `rspec` in your command line.
 - To Run the App in Browser: While in the root directory of the project, run `ruby app.rb` in the terminal. This will start a server, which you can access by entering `localhost:4567` in your browser.
-- Have fun and be a good person!
+- Have fun, and be a good person!
 
 ## Known Bugs
 
@@ -83,7 +83,7 @@ _Connect with me at vamariestewart@gmail.com with ideas to improve this project.
 * HTML5
 * CSS/Bootstrap
 * Ruby
-* Ruby Gems: Capybara, Pry, PG, RSpec, Sinatra, Sintara-Contrib
+* Ruby Gems: Capybara, Pry, PG, Rake, RSpec, Sinatra, Sintara-Contrib
 * Postgres/psql
 
 ### License
