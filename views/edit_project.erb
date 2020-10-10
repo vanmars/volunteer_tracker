@@ -16,6 +16,23 @@
   </div>
 </nav>
 <div class="container">
+  <br>
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="/projects/<%= @project.id %>">Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="/projects/<%= @project.id %>/edit">Edit Project</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title"><%= @project.title %></h3>
+      <p class="card-text">Project Description</p>
+    </div>
+  </div>
   <h1>Update Project: <%= @project.title %></h1>
 
   <form action="/projects/<%= @project.id %>" method="post">
