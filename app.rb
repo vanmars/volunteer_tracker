@@ -72,3 +72,10 @@ post('/projects/search') do
   @volunteer_results = Volunteer.search(search_term)
   erb(:search)
 end
+
+delete('/projects/:id/volunteers/:volunteer_id') do
+  @project = Project.find(params[:id].to_i)
+  volunteer = Volunteer.find(params[:volunteer_id].to_i())
+  volunteer.delete
+  erb(:project)
+end

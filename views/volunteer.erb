@@ -20,6 +20,7 @@
   <div class="card text-center" style="background-color:  #7293A0">
     <div class="card-header" style="background-color:  #7293A0">
       <h1><%= @volunteer.name %></h1>
+      
     </div>
     <div class="card-body" style="background-color: #D8DDEF">
       <h5 class="card-title">Update Volunteer Name</h5>
@@ -36,6 +37,15 @@
       <a href="/projects/<%= @project.id %>" style="color: #D8DDEF">Return to Poject: <%= @project.title %></a>
     </div>
   </div>
+  <br>
+  <br>
+  <div class="d-flex justify-content-center">
+    <form action="/projects/<%= @volunteer.project_id %>/volunteers/<%= @volunteer.id %>" method="post">
+      <input name="_method" type="hidden" value="delete">
+      <button type="submit" class="btn btn-danger" enabled>Delete Volunteer</button>
+    </form>
+  </div>
+  
 </div>
 <footer>
   <div class="fixed-bottom p-2" style="background-color: #45B69C">
