@@ -69,11 +69,26 @@ describe Volunteer do
   end
 
   describe '#update' do
-    it 'allows a user to update volunteer' do
+    it 'allows a user to update a volunteer\'s name' do
       volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
       volunteer1.save
       volunteer1.update({name: 'Josephine'})
       expect(volunteer1.name).to eq 'Josephine'
+    end
+
+    it 'allows a user to update a volunteer\s hours' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      volunteer1.save
+      volunteer1.update({hours: 7})
+      expect(volunteer1.hours).to eq 7
+    end
+
+    it 'allows a user to update a volunteer\s hours multiple times' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      volunteer1.save
+      volunteer1.update({hours: 7})
+      volunteer1.update({hours: 5})
+      expect(volunteer1.hours).to eq 12
     end
   end
 
