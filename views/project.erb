@@ -35,7 +35,7 @@
   </div>
   <br>
   <section class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
       <% if !@project.volunteers.empty? %>
         <table class="table table-striped" style="color: #D8DDEF; background-color: #A0A4B8">
           <thead class="thead-dark">
@@ -47,7 +47,7 @@
           <tbody>
           <% @project.volunteers.each do |volunteer| %>
             <tr>
-              <td><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>"><%= volunteer.name %></a></td>
+              <td><a href="/projects/<%= @project.id %>/volunteers/<%= volunteer.id %>" style="color: #D8DDEF"><%= volunteer.name %></a></td>
               <td>0</td>
             </tr>
           <% end %>
@@ -57,7 +57,7 @@
         <p>There are no volunteers listed for this project yet.</p>
       <% end %>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card text-center shadow" style="background-color: #7293A0">
         <div class="card-header"><h5 class="card-title">Add a Volunteer!</h5></div>
         <div class="card-body">
@@ -73,9 +73,8 @@
     </div>
   </section>
 </div>
-
 <footer>
   <div class="fixed-bottom p-2" style="background-color: #45B69C">
-    <p class="text-white">&#169; 2020 <em>Evergreen Stage of Mind</em></p>
+    <p class="text-white">&#169; 2020 <span style="color: #D8DDEF"><em>Evergreen State of Mind</em></span></p>
   </div>
 </footer>

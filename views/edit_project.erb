@@ -32,6 +32,12 @@
       <h3 class="card-title"><%= @project.title %> (Edit)</h3>
       <p class="card-text">Project Description</p>
     </div>
+    <div class="card-footer text-white" style="background-color: #D8DDEF">
+      <form action="/projects/<%= @project.id %>" method="post">
+        <input name="_method" type="hidden" value="delete">
+        <button type="submit" class="btn btn-danger" enabled>Delete Project</button>
+      </form>
+    </div>
   </div>
   <br>
   <div class="row justify-content-center">
@@ -53,15 +59,9 @@
     </div>
   </div>
   <br>
-  <div class="row justify-content-center">
-      <form action="/projects/<%= @project.id %>" method="post">
-        <input name="_method" type="hidden" value="delete">
-        <button type="submit" class="btn btn-danger" enabled>Delete Project</button>
-      </form>
-  </div>
 </div>
 <footer>
   <div class="fixed-bottom p-2" style="background-color: #45B69C">
-    <p class="text-white">&#169; 2020 <em>Evergreen Stage of Mind</em></p>
+    <p class="text-white">&#169; 2020 <span style="color: #D8DDEF"><em>Evergreen State of Mind</em></span></p>
   </div>
 </footer>
