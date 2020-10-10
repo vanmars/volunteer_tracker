@@ -65,6 +65,7 @@ volunteer_tracker=# CREATE DATABASE volunteer_tracker_test WITH TEMPLATE volunte
 ## Known Bugs
 
 * If a user enters an apostrophe into any input field, the code breaks. Need to consider edge case inputs and code for them.
+* Integration test 2 stopped passing, yet project names are being updated on the page.
 
 Items to Improve:
 * When you add a project on the home page, it would be nice to have the post method go to the place on the page where the table exists, so that you don't have to scroll down after every project addition.
