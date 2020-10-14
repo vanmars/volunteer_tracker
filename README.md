@@ -38,10 +38,6 @@ Create an application that tracks projects and the volunteers working on them. E
 
 ## Setup/Installation Requirements
 
-To View Project:
-* Check out the Heroku app [here](https://fierce-cove-34319.herokuapp.com/)!
-
-To Extend This Project:
 - Navigate to the directory on your local computer where you would like to clone this repo.
 - Clone this repo using the `git clone` command in terminal/command line.
 - Navigate to the cloned folder and run `gem install bundler` to install Bundler, which will mange all gem installations for our project.
