@@ -47,7 +47,6 @@
           <div class="card-body">
             <form action="/projects/<%= @project.id %>" method="post">
             <input name="_method" type="hidden" value="patch">
-            <form action="/projects/<%= @project.id %>/volunteers" method="post">
               <div class="form-group">
                 <label for="title" style="color: #D8DDEF">New Name</label>
                 <input id="title" name="title" class="form-control mx-auto" style="width:50%" type="text" required>
