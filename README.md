@@ -6,6 +6,8 @@ _9 October 2020_
 
 #### By _**Vanessa Stewart**_
 
+<img src="./public/img/landing.png">
+
 ## Description
 
 _This is a project for Epicodus to demonstrate mastery using basic SQL database methods with a Sinatra application. The application is for a fake non-profit called Evergreen State of Mind, which is in need of tracking projects and the volunteers working on each project. The original directions for the assignment include:_
